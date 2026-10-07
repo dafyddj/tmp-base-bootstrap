@@ -74,8 +74,3 @@ jobs:
         with:
           changelog: false
           github_token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: python-semantic-release/publish-action@v10.7.0
-        if: steps.release.outputs.released == 'true'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ steps.release.outputs.tag }}
